@@ -20,16 +20,27 @@ generateBtn.addEventListener("click", writePassword);
 
 //When button is clicked, user is prompted for password criteria. 
 document.getElementById("generate").onclick = function () {
-    prompt("How many characters does your password need to be? (Response must be between 8 and 128)")
-    confirm("Do you need lowercase and uppercase letters?");
-    confirm("Do you need a numeric character?");
-    confirm("Do you need special characters? (!, #, $, etc.)");
+    var length = prompt("How many characters does your password need to be? (Response must be between 8 and 128)")
+    var upperAndLower = confirm("Do you need lowercase and uppercase letters?");
+    var numericCharacter = confirm("Do you need a numeric character?");
+    var specialCharacter = confirm("Do you need special characters? (!, #, $, etc.)");
 };
 
+//Generate a password using prompt answers 
+//'abcdefghijklmnopqrstuvwxyz'.split('')
 
-//Prompt asks for character types needed (lowercase, uppercase, numeric, and/or special characters)
+if (var upperAndLower = true) || (var numericCharacter = false) || (var specialCharacter = false)
 
+if (var upperAndLower = true) || (var numericCharacter = true) || (var specialCharacter = false)
 
+if (var upperAndLower = true) || (var numericCharacter = false) || (var specialCharacter = true)
 
-//Generate a password 
+if (var upperAndLower = true) || (var numericCharacter = true) || (var specialCharacter = true)
 
+if (var upperAndLower = false) || (var numericCharacter = false) || (var specialCharacter = false)
+
+if (var upperAndLower = false) || (var numericCharacter = true) || (var specialCharacter = false)
+
+if (var upperAndLower = false) || (var numericCharacter = false) || (var specialCharacter = true)
+
+if (var upperAndLower = false) || (var numericCharacter = true) || (var specialCharacter = true)
