@@ -10,3 +10,4 @@
 https://megangerwick.github.io/Password-Generator/
 
 ## Screenshot of Webpage
+![password_generator](https://user-images.githubusercontent.com/69534417/94873616-4f86f100-0415-11eb-9025-31796b053740.PNG)
