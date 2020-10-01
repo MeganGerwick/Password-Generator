@@ -1,46 +1,74 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var userPasswordReq = []
+var password = ''
 
 // Write password to the #password input
-function writePassword() {
+/*function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
 
     passwordText.value = password;
 
 }
+*/
+// Create function for picking a random array
+function getRandomArrayElement(userPasswordReq) {
+    return userPasswordReq[Math.floor(Math.random() * userPasswordReq.length)];
+}
 // Set arrays for characters, lower case, upper case, special, and numeric
-var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var special = ["!", "$", "#", "%", "&", "+", "*", "-"];
-var numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+var lowercaseArray = 'abcdefghijklmnopqrstuvwxyz'.split('');
+var uppercaseArray = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+var specialArray = ["!", "$", "#", "%", "&", "+", "*", "-"];
+var numericArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+console.log(lowercaseArray)
+console.log(getRandomArrayElement(lowercaseArray));
 
-//When button is clicked, user is prompted for password criteria. 
-document.getElementById("generate").onclick = function () {
-    var length = prompt("How many characters does your password need to be? (Response must be between 8 and 128)")
-    var upperAndLower = confirm("Do you need lowercase and uppercase letters?");
-    var numericCharacter = confirm("Do you need a numeric character?");
-    var specialCharacter = confirm("Do you need special characters? (!, #, $, etc.)");
-};
+
 
 //Generate a password using prompt answers 
-//'abcdefghijklmnopqrstuvwxyz'.split('')
+// Add event listener to generate button
+document.getElementById("generate").addEventListener("click", function () {
 
-if (var upperAndLower = true) || (var numericCharacter = false) || (var specialCharacter = false)
+    //User is prompted for password criteria. 
 
-if (var upperAndLower = true) || (var numericCharacter = true) || (var specialCharacter = false)
+    var passwordLength = prompt("How many characters does your password need to be? (Response must be between 8 and 128)");
+    var lower = confirm("Do you need lowercase letters?");
+    var upper = confirm("Do you need uppercase letters?");
+    var numericCharacter = confirm("Do you need a numeric character?");
+    var specialCharacter = confirm("Do you need special characters? (!, #, $, etc.)");
 
-if (var upperAndLower = true) || (var numericCharacter = false) || (var specialCharacter = true)
+    console.log(passwordLength);
+    console.log(lower);
+    console.log(upper);
+    console.log(numericCharacter);
+    console.log(specialCharacter);
 
-if (var upperAndLower = true) || (var numericCharacter = true) || (var specialCharacter = true)
+    if (lower === true) {
+        userPasswordReq = userPasswordReq.concat(lowercaseArray);
+        console.log(userPasswordReq);
+    }
+    if (upper === true) {
+        userPasswordReq = userPasswordReq.concat(uppercaseArray);
+        console.log(userPasswordReq);
+    }
 
-if (var upperAndLower = false) || (var numericCharacter = false) || (var specialCharacter = false)
+    if (numericCharacter === true) {
+        userPasswordReq = userPasswordReq.concat(numericArray);
+        console.log(userPasswordReq);
+    }
+    if (specialCharacter === true) {
+        userPasswordReq = userPasswordReq.concat(specialArray);
+        console.log(userPasswordReq);
+    }
+    for (var i = 0; i < JSON.parse(passwordLength); i++) {
+        password += getRandomArrayElement(userPasswordReq);
+        console.log(i);
+    }
+    console.log(password);
 
-if (var upperAndLower = false) || (var numericCharacter = true) || (var specialCharacter = false)
+    document.getElementById("password").value = password;
+})
 
-if (var upperAndLower = false) || (var numericCharacter = false) || (var specialCharacter = true)
 
-if (var upperAndLower = false) || (var numericCharacter = true) || (var specialCharacter = true)
