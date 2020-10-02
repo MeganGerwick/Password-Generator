@@ -2,20 +2,8 @@
 var generateBtn = document.querySelector("#generate");
 var userPasswordReq = []
 var password = ''
-
-// Write password to the #password input
-/*function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-
-    passwordText.value = password;
-
 }
-*/
-// Create function for picking a random array
-function getRandomArrayElement(userPasswordReq) {
-    return userPasswordReq[Math.floor(Math.random() * userPasswordReq.length)];
-}
+
 // Set arrays for characters, lower case, upper case, special, and numeric
 var lowercaseArray = 'abcdefghijklmnopqrstuvwxyz'.split('');
 var uppercaseArray = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
@@ -25,9 +13,6 @@ var numericArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 console.log(lowercaseArray)
 console.log(getRandomArrayElement(lowercaseArray));
 
-
-
-//Generate a password using prompt answers 
 // Add event listener to generate button
 document.getElementById("generate").addEventListener("click", function () {
 
@@ -44,7 +29,7 @@ document.getElementById("generate").addEventListener("click", function () {
     console.log(upper);
     console.log(numericCharacter);
     console.log(specialCharacter);
-
+    // Create a new array according to user password requirements 
     if (lower === true) {
         userPasswordReq = userPasswordReq.concat(lowercaseArray);
         console.log(userPasswordReq);
@@ -62,12 +47,13 @@ document.getElementById("generate").addEventListener("click", function () {
         userPasswordReq = userPasswordReq.concat(specialArray);
         console.log(userPasswordReq);
     }
+    // Use a for loop to pull random characters from the new array
     for (var i = 0; i < JSON.parse(passwordLength); i++) {
         password += getRandomArrayElement(userPasswordReq);
         console.log(i);
     }
     console.log(password);
-
+    // display password in text box
     document.getElementById("password").value = password;
 })
 
