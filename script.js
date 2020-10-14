@@ -51,10 +51,15 @@ document.getElementById("generate").addEventListener("click", function () {
         console.log(userPasswordReq);
     }
     // Use a for loop to pull random characters from the new array
-    for (var i = 0; i < JSON.parse(passwordLength); i++) {
+    if (passwordLength > 7 & passwordLength < 129) {
+        for (var i = 0; i < JSON.parse(passwordLength); i++) {
         password += getRandomArrayElement(userPasswordReq);
         console.log(i);
+    }} 
+    else {
+        alert("Password does not meet length requirement");
     }
+
     console.log(password);
     // display password in text box
     document.getElementById("password").value = password;
