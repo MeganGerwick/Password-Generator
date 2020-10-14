@@ -2,6 +2,11 @@
 var generateBtn = document.querySelector("#generate");
 var userPasswordReq = []
 var password = ''
+function getRandomArrayElement (arr) {
+    var min = 0;
+    var max = (arr.length -1);
+    var random = Math.floor(Math.random() * (max - min)) + min; 
+    return arr[random];
 }
 
 // Set arrays for characters, lower case, upper case, special, and numeric
@@ -10,8 +15,6 @@ var uppercaseArray = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 var specialArray = ["!", "$", "#", "%", "&", "+", "*", "-"];
 var numericArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-console.log(lowercaseArray)
-console.log(getRandomArrayElement(lowercaseArray));
 
 // Add event listener to generate button
 document.getElementById("generate").addEventListener("click", function () {
